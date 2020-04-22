@@ -5,4 +5,12 @@ attr_reader :stock
     @stock = Hash.new(0)
   end
 
+  def restock(ingredient, amount)
+    @stock[ingredient] += amount
+  end
+
+  def stock_check(ingredient)
+    @stock[ingredient]
+  end
+
 end
