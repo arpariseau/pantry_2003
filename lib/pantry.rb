@@ -13,4 +13,10 @@ attr_reader :stock
     @stock[ingredient]
   end
 
+  def enough_ingredients_for?(recipe)
+    recipe.ingredients_required.map do |ingredient, amount|
+      @stock[ingredient] >= amount
+    end.all?
+  end
+
 end
